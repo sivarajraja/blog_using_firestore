@@ -1,0 +1,13 @@
+.outer {
+    margin-top: 50px;
+    margin-left: 10px;
+    height: 100vh;
+}
+
+.btn {
+    margin: 10px !important;
+}
+
+float-end button {
+    background-color:#22223b !important;
+}

@@ -1,0 +1,9 @@
+.card {
+    margin-bottom: 22px !important;
+    background-color: #cbc0d3;
+}
+
+.card-header {
+    background-color: #4a4e6982;
+    text-transform: capitalize;
+}

@@ -1,0 +1,35 @@
+header {
+    background-color: #22223b;
+    color: #f2e9e4;
+    margin-bottom: 22px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 10px 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-container nav {
+    display: flex;
+    margin-right: 28px;
+    gap: 30px;
+}
+
+.nav-container h1 {
+    margin-left: 11px;
+    text-transform: uppercase;
+}
+
+.nav-container a {
+    color: #f2e9e4;
+    text-decoration: none;
+
+}
+
+.nav-container a:hover {
+    color: #4a4e69;
+}

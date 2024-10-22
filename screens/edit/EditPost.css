@@ -1,0 +1,8 @@
+.outercontainer {
+    height: 100vh;
+}
+
+.form-group input,
+.form-group textarea{
+    background-color: #4a4e6939;
+}
