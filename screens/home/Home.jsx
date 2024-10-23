@@ -1,25 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Post from '../../components/post/Post';
 import './Home.css';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase/config';
+import { useFetch } from '../../hooks/useFetch';
 
 const Home = () => {
 
-  const [posts,setPosts] = useState(null);
-
-  useEffect(()=>{
-    (async()=>{
-      const collectionsRef = collection(db,"posts");
-    const snapShots = await getDocs(collectionsRef);
-    let snapShotArr = [] 
-
-    snapShots.forEach((docsData) => {
-      snapShotArr.push({...docsData.data(),id:docsData.id});
-      setPosts(snapShotArr);
-    });
-    })();
-  },[]);
+  const {document:posts} = useFetch("posts")
 
   return (
     <div className='container'>

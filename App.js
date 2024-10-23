@@ -4,11 +4,13 @@ import Navbar from './components/navbar/Navbar';
 import CreatePost from './screens/create/CreatePost';
 import PostDetail from './screens/postdetails/PostDetails'
 import EditPost from "./screens/edit/EditPost";
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className="App-container">
       <BrowserRouter>
+      <Toaster/>
       <Navbar/>
       <div className='container'>
       <Routes>

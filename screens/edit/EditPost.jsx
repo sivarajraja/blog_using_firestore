@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './EditPost.css';
 import { useLocation, useNavigate } from "react-router-dom";
 import Appsubmitbutton from '../../components/appsubmitbutton/Appsubmitbutton'
+import { useFireStore } from '../../hooks/useFireStore';
+import toast from 'react-hot-toast';
 
 export default function EditPost() {
 
@@ -15,6 +17,7 @@ export default function EditPost() {
 
   const { state: post } = location;
 
+  const {editDocument,docError} = useFireStore("posts");
 
 
   const handleSubmit = (e) => {
@@ -29,7 +32,9 @@ export default function EditPost() {
       return;
     }
     setValidationError("");
-    console.log(modifiedField);
+    toast.success('successfully Edited!',{position:"top-center"})
+    editDocument(post.id,modifiedField);
+    navigate("/")
   };
 
   useEffect(() => {
@@ -80,9 +85,17 @@ export default function EditPost() {
             {validationError}
           </div>
         )}
+
+        {
+          docError && (
+            <div className="alert alert-danger" role="alert">
+              {docError}
+            </div>
+          )
+        }
         
         <div className="float-end">
-          <Appsubmitbutton  title="Save Changes " onClick={()=>navigate("/")}/>
+          <Appsubmitbutton  title="Save Changes "/>
         </div>
 
       </form>

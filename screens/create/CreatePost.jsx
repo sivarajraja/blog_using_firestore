@@ -1,12 +1,19 @@
 import React from "react";
 import "./CreatePost.css";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import Appsubmitbutton from "../../components/appsubmitbutton/Appsubmitbutton";
+import { useNavigate } from "react-router-dom";
+import { useFireStore } from "../../hooks/useFireStore";
+import toast from 'react-hot-toast';
 
 export default function Createpost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [validationError, setValidationError] = useState("");
+
+  const navigate = useNavigate();
+
+  const {addDocument,docError} = useFireStore("posts")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +27,10 @@ export default function Createpost() {
       return
     }
     setValidationError("");
-    console.log({ title, body: content, userId:1});
+
+    addDocument({title,body:content,userId:1});
+    toast.success('successfully created!',{position:"top-center"})
+    navigate('/')
   };
 
   
@@ -53,6 +63,14 @@ export default function Createpost() {
             {validationError}
           </div>
         )}
+
+        {
+          docError && (
+            <div className="alert alert-danger" role="alert">
+            {docError}
+            </div>
+          )
+        }
 
         <div className="float-end">
           <Appsubmitbutton title="Create"/>
