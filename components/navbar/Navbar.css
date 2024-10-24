@@ -15,8 +15,10 @@ header {
 
 .nav-container nav {
     display: flex;
-    margin-right: 28px;
-    gap: 30px;
+    align-items: center;
+    margin-right: 11px;
+    gap: 29px;
+
 }
 
 .nav-container h1 {

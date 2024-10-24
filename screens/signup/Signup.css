@@ -1,0 +1,16 @@
+.outer-container {
+    max-width: 400px;
+    margin: 11px auto;
+}
+
+.signup-header {
+    padding: 22px 0px;
+}
+
+.mb-3 input {
+    border: 0.8px solid rgba(0, 0, 0, 0.374);
+}
+
+.float-end {
+    margin-bottom: 11px;
+}

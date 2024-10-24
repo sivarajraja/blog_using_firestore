@@ -5,6 +5,8 @@ import CreatePost from './screens/create/CreatePost';
 import PostDetail from './screens/postdetails/PostDetails'
 import EditPost from "./screens/edit/EditPost";
 import { Toaster } from 'react-hot-toast';
+import Login from './screens/login/Login';
+import Signup from './screens/signup/Signup';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path='/create' element={<CreatePost/>}/>
         <Route path="/post/:id" element={<PostDetail />} />
         <Route path="/edit/:id" element={<EditPost/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
       </Routes>
       </div>
       </BrowserRouter>
