@@ -3,6 +3,14 @@
 
 operation:
 
+SIGNIN
+![signup](https://github.com/user-attachments/assets/031a5cd3-c25a-41c5-ba79-ad2618d71961)
+
+LOGIN
+![login](https://github.com/user-attachments/assets/6c1a5743-c9e3-47d6-8c2e-fd578228d5c0)
+
+AUTHENTICATION DATA IN FIREBASE
+![user_in_firebase](https://github.com/user-attachments/assets/012c8521-abdb-4f8d-8394-fc76101a739c)
 
 CREATE DATA
 
