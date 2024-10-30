@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Appsubmitbutton from '../../components/appsubmitbutton/Appsubmitbutton'
 import './Login.css'
 import useAuthentication from '../../hooks/useAuthentication';
+import { Link } from 'react-router-dom';
 
 
 export default function Login() {
@@ -38,38 +39,42 @@ export default function Login() {
     }
 
   return (
-    <div className='outer-container'>
-        <h2 className='signup-header'>Login</h2>
+  <div className='outer-container'>
+      <h2 className='signup-header'>Login</h2>
 
-    <form onSubmit={handleSubmit}>
+  <form onSubmit={handleSubmit}>
 
-  <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} onChange={handleEmail}/>
-  </div>
+<div className="mb-3">
+  <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+  <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} onChange={handleEmail}/>
+</div>
 
-  <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1" value={password} onChange={handlePassword}/>
-  </div>
+<div className="mb-3">
+  <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+  <input type="password" className="form-control" id="exampleInputPassword1" value={password} onChange={handlePassword}/>
+</div>
 
-        {validationError && (
-          <div className="alert alert-danger" role="alert">
-            {validationError}
-          </div>
-        )}
-
-        {authError && (
-          <div className="alert alert-danger" role="alert">
-            {authError}
-          </div>
-        )}
-  
-        <div className="float-end">
-        <Appsubmitbutton  title="Login"/>
+      {validationError && (
+        <div className="alert alert-danger" role="alert">
+          {validationError}
         </div>
+      )}
 
-    </form>
-    </div>
+      {authError && (
+        <div className="alert alert-danger" role="alert">
+          {authError}
+        </div>
+      )}
+
+      <div className="float-end">
+      <Appsubmitbutton  title="Login"/>
+      </div>
+
+      <div className='create-account'>
+        <h6>don't have a account?</h6>
+        <Link to={'/Signup'}><h6>create new account</h6></Link>
+      </div>
+  </form>
+  </div>
   )
 }

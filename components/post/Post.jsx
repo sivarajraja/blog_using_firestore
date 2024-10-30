@@ -7,6 +7,7 @@ import { useFireStore } from '../../hooks/useFireStore';
 import toast from 'react-hot-toast';
 
 export default function Post({post}) {
+
   const navigate = useNavigate();
 
   const {deleteDocument,docError} = useFireStore("posts");
